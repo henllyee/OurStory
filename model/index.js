@@ -13,4 +13,6 @@ mongoose.connect(config.db_connect,function(err){
 
 
 require('./user');
+require('./collection');
 exports.User=mongoose.model('user');
+exports.Collection = mongoose.model('collection');
