@@ -5,8 +5,10 @@ var mongoose = require('mongoose');
 var config = require('../config');
 
 mongoose.connect(config.db_connect,function(err){
-    console.log('connect server: %s error.',config.db_connect);
-    process.exit();
+    if(err) {
+        console.log('connect server: %s error.', config.db_connect);
+        process.exit();
+    }
 });
 
 

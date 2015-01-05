@@ -1,10 +1,10 @@
 /**
  * Created by HenryCui on 15-1-3.
  */
-var mongoose = reqiure('mongoose');
-var Scehma = mongoose.Schema;
-var user = new Schema({
-    user_name:{type:String,index:true},
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var UserSchema = new Schema({
+    username:{type:String,index:true},
     email:{type:String},
     password:{type:String},
     actived:{type:Boolean},
@@ -12,6 +12,9 @@ var user = new Schema({
         age:{type:String},
         birthdaty:{type:Date}
     },
-    create_date:{type:Date}
+    create_date:{type:Date,default:Date.now}
 });
-mongoose.model('user',user);
+
+UserSchema.index({username:1},{unique:true});
+UserSchema.index({email:1},{unique:true});
+mongoose.model('user',UserSchema);
