@@ -4,6 +4,7 @@
 var collectionProxy = require('../../proxy').Collection;
 var userProxy = require('../../proxy').User;
 var should = require('should');
+var ObjectId = require('mongoose').Schema.ObjectId;
 
 describe('collection proxy',function(){
     describe('newAndSave method',function(){
@@ -24,7 +25,14 @@ describe('collection proxy',function(){
 describe('collection proxy',function(){
     describe('addStory',function(){
         it('should add success',function(done){
-
+            var collectionId = '54ab45d03c4ad9d3011802fc';
+            collectionProxy.addStory(collectionId,'一个去厦门，一个在上海',
+                '<p>这一天，IT男井先生只身漂泊到福建，福建的房二货跟随父母留在上海。</p>',
+                '就像一条平行线永远不会有交集','August 19, 2012','August 20, 2012','./img/my/1.jpg',
+                '厦门、上海，有一天会有交集吗','',function(err){
+                    should(err).not.be.ok;
+                    done();
+                });
         });
     });
 });

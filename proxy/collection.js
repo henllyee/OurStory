@@ -28,7 +28,7 @@ exports.newAndSave=function(title,text,userid,media,caption,callback){
  * 新增story
  * Callback:
  * - err 数据库异常
- * @param {ObjectId} collectionId 集合id
+ * @param {String} collectionId 集合id
  * @param {String} title 标题
  * @param {String} tag 标签
  * @param {String} startdate 开始时间
@@ -39,7 +39,7 @@ exports.newAndSave=function(title,text,userid,media,caption,callback){
  * @param {Function} callback 回调函数
  */
 exports.addStory=function(collectionId,title,text,tag,startdate,enddate,media,caption,thumbnail,callback){
-    Collection.findById(collectionId,function(err,data){
+    Collection.findOne({_id:collectionId},function(err,data){
         if(err){
             callback(err);
             return;
