@@ -11,12 +11,11 @@ describe('collection proxy',function(){
                 collectionProxy.newAndSave('这是两个二货的故事',
                     '<p>故事很简单、很普通，希望他们一直把这个故事写下去，cifdd站点永不关闭。</p>',
                     data._id,'./img/my/1.jpg','About us',function(err){
-                        if(err){
-                            should(err).not.be.ok;
-                            done();
-                        }
+                        should(err).not.be.ok;
+                        done();
                     })
             });
         })
     })
-})
+});
+

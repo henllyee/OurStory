@@ -23,3 +23,7 @@ exports.newAndSave=function(title,text,userid,media,caption,callback){
     collection.asset.caption = caption;
     collection.save(callback);
 }
+
+exports.addStory=function(title,text,tag,startdate,enddate,media,caption,thumbnail,callback){
+
+}
