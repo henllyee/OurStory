@@ -4,6 +4,7 @@
 var collectionProxy = require('../../proxy').Collection;
 var userProxy = require('../../proxy').User;
 var should = require('should');
+
 describe('collection proxy',function(){
     describe('newAndSave method',function(){
         it('should add success',function(done){
@@ -19,3 +20,11 @@ describe('collection proxy',function(){
     })
 });
 
+
+describe('collection proxy',function(){
+    describe('addStory',function(){
+        it('should add success',function(done){
+
+        });
+    });
+});
